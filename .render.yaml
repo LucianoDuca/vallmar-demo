@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: vallmar-demo
+    staticPublishPath: ./
+    routes:
+      - path: /*
+        destination: /index.html
