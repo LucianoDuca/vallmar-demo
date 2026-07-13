@@ -6,8 +6,8 @@
   "whatsapp": "34600000001",
   "whatsappMensaje": "Hola, quería pedir una cita en Clínica Dental Vallmar",
   "colores": {
-    "primario": "#7C2D3A",
-    "acento": "#D4A24C"
+    "primario": "#000000",
+    "acento": "#FFFFFF"
   },
   "servicios": [
     {
