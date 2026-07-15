@@ -240,7 +240,7 @@ function renderServices() {
             <div class="service-icon">${icon(s.icono || 'general')}</div>
             <h3 class="service-title">${s.nombre}</h3>
             <p class="service-description">${s.descripcion}</p>
-            ${s.slug ? `<a href="#" class="service-link" data-procedure="${s.slug}">Ver tratamiento ${icon('arrow')}</a>` : ''}
+            ${s.slug ? `<span class="service-link">Ver tratamiento ${icon('arrow')}</span>` : ''}
           </article>`).join('')}
       </div>
     </div>`;

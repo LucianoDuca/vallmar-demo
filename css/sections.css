@@ -159,6 +159,7 @@
   transform: scaleX(0); transform-origin: left;
   transition: transform 0.4s var(--ease);
 }
+.service-card[data-procedure] { cursor: pointer; }
 .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-6px); border-color: transparent; }
 .service-card:hover::before { transform: scaleX(1); }
 
