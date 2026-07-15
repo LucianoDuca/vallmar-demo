@@ -1,158 +1,55 @@
-/* Mobile First - All base styles are already mobile-optimized */
-
-/* Tablet and up */
-@media (min-width: 768px) {
-  body {
-    font-size: 1rem;
-  }
-
-  .container {
-    padding: 0 var(--spacing-xl);
-  }
-
-  .section-header-title {
-    font-size: 2.25rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .grid-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .grid-4 {
-    grid-template-columns: 1fr 1fr;
-  }
+/* ===== Responsive polish ===== */
+@media (max-width: 900px) {
+  .header-cta { display: none; }
 }
 
-/* Desktop and up */
-@media (min-width: 1024px) {
-  .header-container {
-    padding: var(--spacing-lg) var(--spacing-2xl);
-  }
-
-  .container {
-    padding: 0 var(--spacing-2xl);
-  }
-
-  .section-header-title {
-    font-size: 2.75rem;
-  }
-
-  .hero-text h1 {
-    font-size: 3rem;
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .grid-4 {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+@media (max-width: 768px) {
+  .hero { text-align: left; }
+  .hero-visual { margin-top: var(--spacing-lg); }
+  .hero-stat-card { left: 0; }
+  .section-header { text-align: center; }
+  .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
 }
 
-/* Large desktop and up */
+@media (max-width: 480px) {
+  .hero-buttons .btn { width: 100%; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .team-member { flex-direction: column; text-align: center; align-items: center; }
+}
+
 @media (min-width: 1280px) {
-  body {
-    font-size: 1.0625rem;
-  }
-
-  .section-header-title {
-    font-size: 3rem;
-  }
-
-  .hero-text h1 {
-    font-size: 3.5rem;
-  }
+  body { font-size: 1.02rem; }
 }
 
-/* Print styles */
+/* ===== Print ===== */
 @media print {
-  header,
-  footer,
-  .demo-banner {
-    display: none;
-  }
-
-  body {
-    background: white;
-  }
-
-  .card {
-    page-break-inside: avoid;
-  }
+  header, footer, .demo-banner, .hero-buttons, .menu-toggle { display: none; }
+  body { background: #fff; }
+  .card, .service-card, .review-card { page-break-inside: avoid; }
 }
 
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
+/* ===== Dark mode — coherente con la marca (teal profundo + oro) ===== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1F2937;
-    --text: #F3F4F6;
-    --text-light: #D1D5DB;
-    --text-lighter: #9CA3AF;
-    --bg-light: #374151;
-    --border-light: rgba(255, 255, 255, 0.1);
+    --bg: #0C2224;
+    --bg-light: #10312F;
+    --surface: #123032;
+    --text: #EAF3F1;
+    --text-light: #A8BEB9;
+    --text-lighter: #7E938E;
+    --border-light: rgba(255, 255, 255, 0.10);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --primary-050: rgba(87, 227, 155, 0.10);
+    --glass: rgba(12, 34, 36, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.08);
   }
 
-  body {
-    background-color: var(--bg);
-    color: var(--text);
-  }
-
-  header {
-    background: rgba(31, 41, 55, 0.98);
-    border-bottom-color: var(--border-light);
-  }
-
-  .card,
-  .service-card,
-  .review-card,
-  .team-member {
-    background-color: #374151;
-    border-color: var(--border-light);
-  }
-
-  .card:hover,
-  .service-card:hover,
-  .review-card:hover,
-  .team-member:hover {
-    background-color: #4B5563;
-  }
-
-  .badge {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text);
-  }
-
-  .section-header-description {
-    color: var(--text-light);
-  }
-
-  .service-title,
-  .section-header-title,
-  .location-info h2 {
-    color: var(--text);
-  }
-
-  .service-description,
-  .review-text,
-  .team-member-bio,
-  .location-detail-content dt {
-    color: var(--text-light);
-  }
+  .btn-secondary { color: var(--text); }
+  .btn-secondary:hover { background: var(--surface); color: var(--accent); border-color: var(--accent); }
+  .service-icon, .location-detail-icon { background: rgba(87, 227, 155, 0.12); color: #7fe3b6; }
+  .eyebrow { background: rgba(199, 154, 63, 0.14); }
+  .star-empty { color: #3c4f4c; }
+  .review-source, .section-header-label { color: var(--accent); }
+  .faq-toggle { background: rgba(87, 227, 155, 0.12); color: #7fe3b6; }
+  .trust-strip { background: var(--surface); }
 }

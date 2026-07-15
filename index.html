@@ -3,13 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Clínica dental con implantes, ortodoncia y tratamientos estéticos">
-  <title>Clínica Dental - Sonrisas Perfectas</title>
+  <meta name="description" content="Clínica Dental Vallmar en Burgos: implantes, ortodoncia invisible, estética dental y odontología general. Primera visita de valoración gratuita y presupuesto por escrito.">
+  <meta name="theme-color" content="#0F5257">
+  <title>Clínica Dental Vallmar · Dentista en Burgos</title>
+
+  <!-- Favicon (SVG inline, sin dependencias) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F5257'/%3E%3Cpath d='M9 22c-1-5 1-11 7-11s8 6 7 11c-.5 2.5-1.6 4-3 4-1.6 0-1.8-3-4-3s-2.4 3-4 3c-1.4 0-2.5-1.5-3-4z' fill='%23fff'/%3E%3C/svg%3E">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Clínica Dental Vallmar · Dentista en Burgos">
+  <meta property="og:description" content="Sonrisas cuidadas con calma en el centro de Burgos. Implantes, ortodoncia y estética dental.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="./css/variables.css">
@@ -19,78 +29,67 @@
   <link rel="stylesheet" href="./css/advanced.css">
   <link rel="stylesheet" href="./css/animations.css">
   <link rel="stylesheet" href="./css/responsive.css">
+
+  <!-- SEO estructurado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Clínica Dental Vallmar",
+    "description": "Clínica dental en Burgos: implantes, ortodoncia, estética dental y odontología general.",
+    "address": { "@type": "PostalAddress", "streetAddress": "Calle Vitoria 12", "postalCode": "09004", "addressLocality": "Burgos", "addressCountry": "ES" },
+    "telephone": "+34 947 000 000",
+    "areaServed": "Burgos",
+    "priceRange": "€€",
+    "openingHours": ["Mo-Fr 09:30-20:30", "Sa 10:00-13:30"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "63" }
+  }
+  </script>
 </head>
 <body>
-  <!-- Demo Banner -->
+  <!-- Demo banner -->
   <div class="demo-banner"></div>
 
   <!-- Header -->
   <header>
     <div class="header-container">
-      <a href="#" class="logo">
-        <span>Dental Mendoza</span>
-      </a>
+      <a href="#hero" class="logo" aria-label="Clínica Dental Vallmar"></a>
       <nav class="nav-desktop">
-        <a href="#hero" class="nav-link active">Inicio</a>
         <div class="nav-dropdown">
-          <a href="#" class="nav-link">Odontología General</a>
+          <a href="#" class="nav-link">Tratamientos</a>
           <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Limpiezas</a>
-            <a href="#" class="dropdown-item">Empastes</a>
-            <a href="#" class="dropdown-item">Endodoncia</a>
+            <a href="#" class="dropdown-item" data-procedure="implantes">Implantes dentales</a>
+            <a href="#" class="dropdown-item" data-procedure="ortodoncia">Ortodoncia invisible</a>
+            <a href="#" class="dropdown-item" data-procedure="estetica">Estética dental</a>
+            <a href="#" class="dropdown-item" data-procedure="endodoncia">Endodoncia</a>
+            <a href="#" class="dropdown-item" data-procedure="periodoncia">Periodoncia</a>
+            <a href="#" class="dropdown-item" data-procedure="general">Odontología general</a>
           </div>
         </div>
-        <div class="nav-dropdown">
-          <a href="#" class="nav-link">Odontología Estética</a>
-          <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Blanqueamiento</a>
-            <a href="#" class="dropdown-item">Carillas</a>
-            <a href="#" class="dropdown-item">Diseño de sonrisa</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a href="#" class="nav-link">Cirugía Ortomaxilofacial</a>
-          <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Implantes</a>
-            <a href="#" class="dropdown-item">Extracciones</a>
-            <a href="#" class="dropdown-item">Cirugía ósea</a>
-          </div>
-        </div>
-        <a href="#galeria" class="nav-link">Antes y Después</a>
-        <a href="#faq" class="nav-link">Preguntas Frecuentes</a>
+        <a href="#galeria" class="nav-link">Antes y después</a>
+        <a href="#resenas" class="nav-link">Opiniones</a>
+        <a href="#equipo" class="nav-link">Equipo</a>
+        <a href="#faq" class="nav-link">Preguntas</a>
+        <a href="#ubicacion" class="nav-link">Contacto</a>
       </nav>
-      <button class="menu-toggle" id="menuToggle">☰</button>
+      <div class="header-cta"></div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
     </div>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- Hero Section -->
     <section id="hero" class="hero"></section>
-
-    <!-- Services Section -->
+    <div id="trust" class="trust-strip"></div>
+    <section id="stats"></section>
     <section id="servicios" class="services"></section>
-
-    <!-- Before/After Slider Section -->
     <section id="slider" class="before-after-slider"></section>
-
-    <!-- Reviews Section -->
-    <section id="resenas" class="reviews"></section>
-
-    <!-- Gallery Section -->
     <section id="galeria" class="gallery"></section>
-
-    <!-- Team Section -->
+    <section id="resenas" class="reviews"></section>
     <section id="equipo" class="team"></section>
-
-    <!-- Location Section -->
-    <section id="ubicacion" class="location"></section>
-
-    <!-- FAQ Section -->
     <section id="faq" class="faq"></section>
+    <section id="ubicacion" class="location"></section>
   </main>
 
-  <!-- Footer -->
   <footer></footer>
 
   <!-- Scripts -->

@@ -1,222 +1,184 @@
-// Dynamic procedure pages
+/* =========================================================
+   Vallmar — fichas de tratamiento dinámicas
+   Se abren desde el nav o las tarjetas de servicio (data-procedure).
+   Arte SVG propio y estilos por clases (advanced.css).
+   ========================================================= */
 
 const procedures = {
   implantes: {
-    titulo: "Implantes Dentales",
-    subtitulo: "Cirugía guiada 3D para implantes más precisos y seguros",
-    imagen: "https://via.placeholder.com/600x400?text=Implantes+Dentales",
-    descripcion: "Utilizamos cirugía guiada y planificación digital avanzada con guías impresas en 3D para lograr implantes más precisos, seguros y estables, con una experiencia más cómoda para el paciente.",
-    beneficios: [
-      "Precisión milimétrica en la colocación",
-      "Menor tiempo quirúrgico",
-      "Recuperación más rápida",
-      "Resultados estéticos superiores",
-      "Garantía de durabilidad"
-    ],
+    titulo: "Implantes dentales",
+    subtitulo: "Cirugía guiada por ordenador para implantes más precisos y seguros.",
+    icono: "implante",
+    descripcion: "Recuperamos las piezas perdidas con implantes de titanio de calidad certificada. Planificamos cada caso con un TAC y cirugía guiada para colocar el implante en la posición exacta.",
+    beneficios: ["Precisión milimétrica con cirugía guiada", "Menos molestias y recuperación más rápida", "Resultado natural y duradero", "Garantía por escrito"],
     proceso: [
-      { paso: 1, titulo: "Consulta inicial", descripcion: "Evaluamos tu caso y planificamos el tratamiento" },
-      { paso: 2, titulo: "Cirugía", descripcion: "Colocación del implante con tecnología 3D" },
-      { paso: 3, titulo: "Osteointegración", descripcion: "El implante se integra con el hueso (3-6 meses)" },
-      { paso: 4, titulo: "Corona", descripcion: "Colocación de la corona final" }
+      { titulo: "Estudio con TAC", descripcion: "Valoramos hueso y encía y planificamos el implante en 3D." },
+      { titulo: "Colocación", descripcion: "Cirugía guiada, mínimamente invasiva y sin dolor." },
+      { titulo: "Osteointegración", descripcion: "El implante se integra con el hueso (2-4 meses)." },
+      { titulo: "Corona definitiva", descripcion: "Colocamos la corona a medida sobre el implante." }
     ],
-    duracion: "6-8 meses total",
-    duracionCirugia: "45-60 minutos"
+    duracion: "3-5 meses en total",
+    intervencion: "45-60 minutos por implante"
   },
-
   ortodoncia: {
-    titulo: "Ortodoncia Invisible",
-    subtitulo: "Alinea tus dientes sin brackets metálicos",
-    imagen: "https://via.placeholder.com/600x400?text=Ortodoncia+Invisible",
-    descripcion: "Las férulas transparentes personalizadas alinean gradualmente tus dientes de forma imperceptible. Cómodo, estético y efectivo para pacientes de todas las edades.",
-    beneficios: [
-      "Totalmente invisible",
-      "Removible para comer y limpiar",
-      "Sin restricciones alimentarias",
-      "Más cómodo que brackets",
-      "Más higiénico"
-    ],
+    titulo: "Ortodoncia infantil y adulta",
+    subtitulo: "Alinea tus dientes de forma discreta, con férulas transparentes.",
+    icono: "ortodoncia",
+    descripcion: "Ortodoncia a medida para cada edad. Con férulas invisibles alineamos los dientes de forma cómoda y prácticamente imperceptible, con revisiones incluidas durante todo el tratamiento.",
+    beneficios: ["Prácticamente invisible", "Removible para comer y lavarte los dientes", "Más cómoda que los brackets", "Revisiones incluidas"],
     proceso: [
-      { paso: 1, titulo: "Escaneo 3D", descripcion: "Capturamos una imagen digital exacta de tus dientes" },
-      { paso: 2, titulo: "Plan de tratamiento", descripcion: "Te mostramos el resultado final antes de empezar" },
-      { paso: 3, titulo: "Fabricación", descripcion: "Se fabrican todas tus férulas personalizadas" },
-      { paso: 4, titulo: "Cambio mensual", descripcion: "Cambias de férula cada 2-4 semanas" }
+      { titulo: "Escaneo 3D", descripcion: "Tomamos una imagen digital exacta de tu boca." },
+      { titulo: "Plan de tratamiento", descripcion: "Te mostramos el resultado final antes de empezar." },
+      { titulo: "Fabricación", descripcion: "Se fabrican tus férulas personalizadas." },
+      { titulo: "Cambio periódico", descripcion: "Cambias de férula cada 1-2 semanas." }
     ],
     duracion: "12-18 meses",
-    duracionCirugia: "N/A"
+    intervencion: "Revisiones cada 6-8 semanas"
   },
-
-  blanqueamiento: {
-    titulo: "Blanqueamiento Dental",
-    subtitulo: "Resultados visibles desde la primera sesión",
-    imagen: "https://via.placeholder.com/600x400?text=Blanqueamiento+Dental",
-    descripcion: "Técnicas seguras de blanqueamiento profesional que aclaran tus dientes varios tonos, con resultados duraderos y sin dañar el esmalte.",
-    beneficios: [
-      "Resultados inmediatos",
-      "Seguimiento profesional",
-      "Sin sensibilidad con nuestro método",
-      "Resultados duraderos",
-      "Sonrisa más radiante"
-    ],
-    proceso: [
-      { paso: 1, titulo: "Consulta", descripcion: "Evaluamos el estado actual de tus dientes" },
-      { paso: 2, titulo: "Protección", descripcion: "Protegemos encías y labios" },
-      { paso: 3, titulo: "Aplicación", descripcion: "Aplicamos gel blanqueador profesional" },
-      { paso: 4, titulo: "Resultado", descripcion: "Verás cambios notables en 30-45 minutos" }
-    ],
-    duracion: "Resultados duraderos 6-12 meses",
-    duracionCirugia: "45 minutos"
-  },
-
-  endodoncia: {
-    titulo: "Tratamiento de Conducto",
-    subtitulo: "Salva tu diente sin dolor",
-    imagen: "https://via.placeholder.com/600x400?text=Endodoncia",
-    descripcion: "Con tecnología moderna y anestesia efectiva, realizamos tratamientos de conducto sin dolor. Salva tu diente de forma segura y definitiva.",
-    beneficios: [
-      "Salva tu diente natural",
-      "Sin dolor durante el procedimiento",
-      "Tecnología rotativa avanzada",
-      "Menor tiempo de tratamiento",
-      "Alta tasa de éxito"
-    ],
-    proceso: [
-      { paso: 1, titulo: "Diagnóstico", descripcion: "Radiografías para evaluar la infección" },
-      { paso: 2, titulo: "Anestesia", descripcion: "Anestesia local efectiva" },
-      { paso: 3, titulo: "Limpieza", descripcion: "Removemos el tejido infectado" },
-      { paso: 4, titulo: "Obturación", descripcion: "Sellamos el conducto" }
-    ],
-    duracion: "1-3 sesiones",
-    duracionCirugia: "60-90 minutos por sesión"
-  },
-
-  periodoncia: {
-    titulo: "Tratamiento de Encías",
-    subtitulo: "Recupera la salud de tus encías",
-    imagen: "https://via.placeholder.com/600x400?text=Periodoncia",
-    descripcion: "Tratamientos preventivos y correctivos para problemas de encías, desde limpiezas hasta cirugía periodontal según sea necesario.",
-    beneficios: [
-      "Previene la pérdida de dientes",
-      "Detiene el sangrado",
-      "Elimina la inflamación",
-      "Mejora la estética",
-      "Protege tu inversión en implantes"
-    ],
-    proceso: [
-      { paso: 1, titulo: "Evaluación", descripcion: "Medimos la profundidad de las bolsas" },
-      { paso: 2, titulo: "Limpieza", descripcion: "Limpieza profunda con ultrasonido" },
-      { paso: 3, titulo: "Alisado radicular", descripcion: "Pulimos las raíces para prevenir recurrencia" },
-      { paso: 4, titulo: "Mantenimiento", descripcion: "Revisiones cada 3-4 meses" }
-    ],
-    duracion: "Depende de la severidad",
-    duracionCirugia: "45-60 minutos"
-  },
-
   estetica: {
-    titulo: "Estética Dental",
-    subtitulo: "Diseño de sonrisa personalizado",
-    imagen: "https://via.placeholder.com/600x400?text=Estética+Dental",
-    descripcion: "Carillas de porcelana y diseño de sonrisa personalizado para lograr la sonrisa de tus sueños con resultados naturales y duraderos.",
-    beneficios: [
-      "Apariencia completamente natural",
-      "Duraderas (10+ años)",
-      "Resistentes a manchas",
-      "Mejora significativa de la sonrisa",
-      "Resultados transformadores"
-    ],
+    titulo: "Estética dental",
+    subtitulo: "Carillas y diseño de sonrisa con resultados naturales.",
+    icono: "estetica",
+    descripcion: "Diseñamos tu sonrisa de forma digital antes de empezar, para que veas el resultado. Carillas de porcelana y blanqueamiento para una sonrisa armónica y natural.",
+    beneficios: ["Diseño digital previo de la sonrisa", "Aspecto completamente natural", "Carillas resistentes a las manchas", "Resultados duraderos"],
     proceso: [
-      { paso: 1, titulo: "Diseño digital", descripcion: "Simulamos tu sonrisa futura" },
-      { paso: 2, titulo: "Preparación", descripcion: "Preparamos mínimamente los dientes" },
-      { paso: 3, titulo: "Moldes", descripcion: "Tomamos moldes para las carillas" },
-      { paso: 4, titulo: "Cementado", descripcion: "Cementamos las carillas permanentemente" }
+      { titulo: "Diseño digital", descripcion: "Simulamos tu sonrisa futura y la validamos contigo." },
+      { titulo: "Preparación mínima", descripcion: "Preparamos los dientes de forma conservadora." },
+      { titulo: "Prueba", descripcion: "Comprobamos color y forma antes de fijar." },
+      { titulo: "Cementado", descripcion: "Colocamos las carillas de forma definitiva." }
     ],
     duracion: "2-3 semanas",
-    duracionCirugia: "2 sesiones de 1-2 horas"
+    intervencion: "2 sesiones de 1-2 horas"
+  },
+  endodoncia: {
+    titulo: "Endodoncia",
+    subtitulo: "Tratamiento de conducto sin dolor para salvar tu diente.",
+    icono: "endodoncia",
+    descripcion: "Con anestesia eficaz y tecnología rotatoria realizamos el tratamiento de conducto de forma cómoda, eliminando la infección y conservando tu diente natural.",
+    beneficios: ["Conserva tu diente natural", "Sin dolor durante el procedimiento", "Tecnología que acorta el tiempo", "Alta tasa de éxito"],
+    proceso: [
+      { titulo: "Diagnóstico", descripcion: "Radiografía para valorar la infección." },
+      { titulo: "Anestesia", descripcion: "Anestesia local eficaz y cómoda." },
+      { titulo: "Limpieza", descripcion: "Eliminamos el tejido infectado del conducto." },
+      { titulo: "Sellado", descripcion: "Obturamos y protegemos el diente." }
+    ],
+    duracion: "1-2 sesiones",
+    intervencion: "60-90 minutos por sesión"
+  },
+  periodoncia: {
+    titulo: "Periodoncia",
+    subtitulo: "Cuidamos tus encías para frenar la enfermedad a tiempo.",
+    icono: "periodoncia",
+    descripcion: "Tratamientos preventivos y correctivos de las encías, desde la limpieza profunda hasta la cirugía periodontal cuando es necesaria, para conservar tus dientes.",
+    beneficios: ["Previene la pérdida de dientes", "Detiene el sangrado y la inflamación", "Protege tu inversión en implantes", "Mantenimiento personalizado"],
+    proceso: [
+      { titulo: "Evaluación", descripcion: "Medimos la profundidad de las encías." },
+      { titulo: "Limpieza profunda", descripcion: "Eliminamos sarro bajo la encía con ultrasonidos." },
+      { titulo: "Alisado radicular", descripcion: "Pulimos las raíces para evitar recaídas." },
+      { titulo: "Mantenimiento", descripcion: "Revisiones cada 3-4 meses." }
+    ],
+    duracion: "Según severidad",
+    intervencion: "45-60 minutos por sesión"
+  },
+  general: {
+    titulo: "Odontología general",
+    subtitulo: "Revisiones, empastes y limpiezas para mantener tu boca sana.",
+    icono: "general",
+    descripcion: "La base de una boca sana. Revisiones periódicas, empastes y limpiezas profesionales para detectar y tratar a tiempo cualquier problema, evitando tratamientos más costosos.",
+    beneficios: ["Detección precoz de caries", "Limpiezas profesionales", "Empastes estéticos", "Consejos de higiene personalizados"],
+    proceso: [
+      { titulo: "Revisión", descripcion: "Exploración completa de dientes y encías." },
+      { titulo: "Diagnóstico", descripcion: "Te explicamos el estado de tu boca con claridad." },
+      { titulo: "Tratamiento", descripcion: "Empaste o limpieza según lo que necesites." },
+      { titulo: "Prevención", descripcion: "Plan de mantenimiento para el futuro." }
+    ],
+    duracion: "Sesión única en la mayoría de casos",
+    intervencion: "30-45 minutos"
   }
 };
 
-function renderProcedurePage(procedureKey) {
-  const procedure = procedures[procedureKey];
-  if (!procedure) return;
+function procArtSVG(key) {
+  const inner = (typeof ICONS !== 'undefined' && ICONS[key]) ? ICONS[key] : (ICONS.general || '');
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+    <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF3F1"/><stop offset="1" stop-color="#D8E9E5"/></linearGradient></defs>
+    <rect width="600" height="400" fill="url(#pg)"/>
+    <circle cx="120" cy="90" r="120" fill="#0F5257" opacity="0.06"/>
+    <circle cx="500" cy="330" r="140" fill="#C79A3F" opacity="0.09"/>
+    <g transform="translate(300 200) scale(7)" fill="none" stroke="#0F5257" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+      <g transform="translate(-12 -12)">${inner}</g>
+    </g>
+  </svg>`;
+}
 
-  const container = document.querySelector('main');
-  if (!container) return;
+function renderProcedurePage(key, cfg) {
+  const p = procedures[key];
+  if (!p) return;
+  cfg = cfg || (typeof config !== 'undefined' ? config : {});
+  const main = document.querySelector('main');
+  if (!main) return;
 
-  let html = `
-    <div class="procedure-page page-transition">
-      <!-- Hero Section -->
-      <section class="procedure-hero" style="background: linear-gradient(135deg, #1F2937 0%, #374151 100%);">
-        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: var(--spacing-4xl) var(--spacing-lg); color: white;">
-          <a href="#" class="back-button" onclick="location.reload(); return false;" style="color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: var(--spacing-lg); display: inline-block;">← Volver</a>
-          <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: var(--spacing-md);">${procedure.titulo}</h1>
-          <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 600px;">${procedure.subtitulo}</p>
+  const waMsg = `Hola, quería información sobre ${p.titulo} en ${cfg.nombre || 'la clínica'}`;
+  const waHref = (typeof whatsappHref === 'function') ? whatsappHref(cfg, waMsg) : '#';
+  const iconSvg = (typeof icon === 'function') ? icon('check') : '';
+  const arrow = (typeof icon === 'function') ? icon('arrow') : '';
+
+  main.innerHTML = `
+    <div class="procedure-page">
+      <section class="procedure-hero">
+        <div class="container">
+          <a href="#" class="back-button" data-home>${arrow ? '' : ''}← Volver al inicio</a>
+          <h1>${p.titulo}</h1>
+          <p>${p.subtitulo}</p>
         </div>
       </section>
 
-      <!-- Main Content -->
-      <section style="padding: var(--spacing-4xl) var(--spacing-lg);">
-        <div class="container" style="max-width: 1400px; margin: 0 auto;">
-          <div style="display: grid; gap: var(--spacing-2xl); grid-template-columns: 1fr 1fr; align-items: start;">
-            <div>
-              <img src="${procedure.imagen}" alt="${procedure.titulo}" style="width: 100%; border-radius: var(--radius-3xl); box-shadow: var(--shadow-lg);">
+      <section class="proc-section">
+        <div class="proc-grid">
+          <div class="proc-art">${procArtSVG(p.icono || key)}</div>
+          <div>
+            <p class="proc-lead">${p.descripcion}</p>
+            <ul class="proc-benefits">
+              ${p.beneficios.map(b => `<li>${iconSvg}<span>${b}</span></li>`).join('')}
+            </ul>
+            <div class="proc-meta">
+              <p><strong>Duración total:</strong> ${p.duracion}</p>
+              <p><strong>Cada sesión:</strong> ${p.intervencion}</p>
             </div>
-            <div>
-              <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--text);">${procedure.descripcion}</h2>
-
-              <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: var(--spacing-2xl); margin-bottom: var(--spacing-md); color: var(--text);">Beneficios</h3>
-              <ul style="list-style: none; padding: 0;">
-                ${procedure.beneficios.map(b => `<li style="padding: var(--spacing-sm) 0; color: var(--text-light);"><span style="color: var(--accent-green); font-weight: 600;">✓</span> ${b}</li>`).join('')}
-              </ul>
-
-              <div style="margin-top: var(--spacing-2xl); padding: var(--spacing-lg); background-color: var(--bg-light); border-radius: var(--radius-lg);">
-                <p style="margin: 0; color: var(--text-light);"><strong>Duración total:</strong> ${procedure.duracion}</p>
-                ${procedure.duracionCirugia !== 'N/A' ? `<p style="margin: var(--spacing-sm) 0 0 0; color: var(--text-light);"><strong>Duración del procedimiento:</strong> ${procedure.duracionCirugia}</p>` : ''}
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <!-- Process Steps -->
-      <section style="padding: var(--spacing-4xl) var(--spacing-lg); background-color: var(--bg-light);">
-        <div class="container" style="max-width: 1400px; margin: 0 auto;">
-          <h2 style="font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: var(--spacing-3xl); color: var(--text);">Proceso de Tratamiento</h2>
-          <div style="display: grid; gap: var(--spacing-2xl); grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-            ${procedure.proceso.map(p => `
-              <div style="padding: var(--spacing-lg); background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
-                <div style="width: 3rem; height: 3rem; background: var(--accent-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin-bottom: var(--spacing-md);">
-                  ${p.paso}
-                </div>
-                <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: var(--spacing-sm); color: var(--text);">${p.titulo}</h3>
-                <p style="margin: 0; color: var(--text-light); font-size: 0.875rem;">${p.descripcion}</p>
-              </div>
-            `).join('')}
-          </div>
+      <section class="proc-section alt">
+        <div class="section-header"><span class="section-header-label">Cómo trabajamos</span><h2 class="section-header-title">El proceso, paso a paso</h2></div>
+        <div class="proc-steps">
+          ${p.proceso.map((s, i) => `
+            <div class="proc-step">
+              <div class="step-num">${i + 1}</div>
+              <h3>${s.titulo}</h3>
+              <p>${s.descripcion}</p>
+            </div>`).join('')}
         </div>
       </section>
 
-      <!-- CTA -->
-      <section style="padding: var(--spacing-4xl) var(--spacing-lg);">
-        <div class="container" style="max-width: 1400px; margin: 0 auto; text-align: center;">
-          <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--text);">¿Listo para transformar tu sonrisa?</h2>
-          <p style="font-size: 1.125rem; color: var(--text-light); margin-bottom: var(--spacing-2xl);">Contacta con nosotros hoy para agendar tu consulta gratuita</p>
-          <div style="display: flex; gap: var(--spacing-lg); justify-content: center; flex-wrap: wrap;">
-            <a href="https://wa.me/34600000000?text=Hola%2C%20estoy%20interesado%20en%20${procedure.titulo}" target="_blank" class="btn btn-primary">
-              Contactar por WhatsApp
-            </a>
-            <button onclick="location.reload();" class="btn btn-secondary">
-              Volver al inicio
-            </button>
+      <section class="proc-section">
+        <div class="proc-cta">
+          <h2>¿Damos el primer paso?</h2>
+          <p>Primera visita de valoración gratuita y presupuesto por escrito, sin compromiso.</p>
+          <div class="hero-buttons">
+            <a href="${waHref}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">${typeof icon === 'function' ? icon('whatsapp', 'icon') : ''} Pedir cita por WhatsApp</a>
+            <a href="#" class="btn btn-secondary" data-home>Volver al inicio</a>
           </div>
         </div>
       </section>
-    </div>
-  `;
+    </div>`;
 
-  container.innerHTML = html;
+  main.querySelectorAll('[data-home]').forEach(el => {
+    el.addEventListener('click', (e) => { e.preventDefault(); location.reload(); });
+  });
+
   window.scrollTo(0, 0);
 }
 
-// Export for use
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { renderProcedurePage, procedures };
 }

@@ -1,77 +1,68 @@
 {
   "nombre": "Clínica Dental Vallmar",
+  "marca": "Vallmar",
   "ciudad": "Burgos",
-  "eslogan": "Sonrisas cuidadas con calma, en el centro de Burgos",
+  "eslogan": "Sonrisas cuidadas con calma",
+  "heroTitulo": "Tu sonrisa, tratada con <em>calma</em> y criterio en el centro de Burgos",
+  "heroSubtitulo": "Odontología cercana y sin prisas: primera visita de valoración incluida y presupuesto claro por escrito antes de empezar.",
   "telefono": "+34 947 000 000",
   "whatsapp": "34600000001",
   "whatsappMensaje": "Hola, quería pedir una cita en Clínica Dental Vallmar",
   "colores": {
-    "primario": "#000000",
-    "acento": "#FFFFFF"
+    "primario": "#0F5257",
+    "acento": "#C79A3F"
   },
+  "stats": [
+    { "num": "18", "sufijo": "años", "cap": "cuidando sonrisas en Burgos" },
+    { "num": "12.000", "sufijo": "+", "cap": "tratamientos realizados" },
+    { "num": "4,9", "sufijo": "★", "cap": "valoración media en Google" },
+    { "num": "0", "sufijo": "€", "cap": "primera visita de valoración" }
+  ],
+  "confianza": [
+    { "icono": "shield", "texto": "Garantía por escrito" },
+    { "icono": "clock", "texto": "Citas sin esperas" },
+    { "icono": "card", "texto": "Financiación hasta 24 meses" },
+    { "icono": "leaf", "texto": "Trato cercano y sin prisas" }
+  ],
   "servicios": [
-    {
-      "nombre": "Ortodoncia infantil y adulta",
-      "descripcion": "Tratamientos a medida para cada edad, con revisiones incluidas durante todo el proceso."
-    },
-    {
-      "nombre": "Endodoncia",
-      "descripcion": "Tratamiento de conducto sin dolor, con tecnología que acorta el tiempo en el sillón."
-    },
-    {
-      "nombre": "Implantes dentales",
-      "descripcion": "Recupera piezas perdidas con implantes de calidad certificada y garantía por escrito."
-    },
-    {
-      "nombre": "Periodoncia",
-      "descripcion": "Cuidado de encías para frenar a tiempo problemas que después salen mucho más caros."
-    },
-    {
-      "nombre": "Odontología general",
-      "descripcion": "Revisiones, empastes y limpiezas para mantener tu boca sana todo el año."
-    },
-    {
-      "nombre": "Estética dental",
-      "descripcion": "Carillas y blanqueamiento para la sonrisa que querías desde hace tiempo."
-    }
+    { "slug": "implantes", "icono": "implante", "nombre": "Implantes dentales", "descripcion": "Recupera piezas perdidas con implantes de calidad certificada, cirugía guiada y garantía por escrito." },
+    { "slug": "ortodoncia", "icono": "ortodoncia", "nombre": "Ortodoncia infantil y adulta", "descripcion": "Tratamientos a medida para cada edad, con férulas invisibles y revisiones incluidas en todo el proceso." },
+    { "slug": "estetica", "icono": "estetica", "nombre": "Estética dental", "descripcion": "Carillas y blanqueamiento para conseguir la sonrisa que querías, con resultados naturales." },
+    { "slug": "endodoncia", "icono": "endodoncia", "nombre": "Endodoncia", "descripcion": "Tratamiento de conducto sin dolor, con tecnología que acorta el tiempo en el sillón." },
+    { "slug": "periodoncia", "icono": "periodoncia", "nombre": "Periodoncia", "descripcion": "Cuidado de encías para frenar a tiempo problemas que después salen mucho más caros." },
+    { "slug": "general", "icono": "general", "nombre": "Odontología general", "descripcion": "Revisiones, empastes y limpiezas para mantener tu boca sana durante todo el año." }
   ],
   "resenasTotales": 63,
   "notaGoogle": 4.9,
   "resenas": [
-    {
-      "autor": "Marta L.",
-      "estrellas": 5,
-      "texto": "Muy profesionales y con mucha paciencia. Llevé a mis dos hijos y salieron encantados."
-    },
-    {
-      "autor": "Ricardo S.",
-      "estrellas": 5,
-      "texto": "Me hice un implante y el seguimiento posterior fue excelente. Se nota que les importa el paciente."
-    },
-    {
-      "autor": "Elena P.",
-      "estrellas": 5,
-      "texto": "Pedí cita por la web y me atendieron en dos días. Instalaciones impecables."
-    },
-    {
-      "autor": "Fernando A.",
-      "estrellas": 4,
-      "texto": "Buen trato y precios claros desde el primer presupuesto."
-    }
+    { "autor": "Marta L.", "estrellas": 5, "texto": "Muy profesionales y con mucha paciencia. Llevé a mis dos hijos y salieron encantados." },
+    { "autor": "Ricardo S.", "estrellas": 5, "texto": "Me hice un implante y el seguimiento posterior fue excelente. Se nota que les importa el paciente." },
+    { "autor": "Elena P.", "estrellas": 5, "texto": "Pedí cita por la web y me atendieron en dos días. Instalaciones impecables y trato cercano." },
+    { "autor": "Fernando A.", "estrellas": 4, "texto": "Buen trato y precios claros desde el primer presupuesto. Sin sorpresas al final." }
   ],
+  "casos": [
+    { "titulo": "Carillas de porcelana", "before": "#d9c9a3", "after": "#ffffff" },
+    { "titulo": "Blanqueamiento", "before": "#e2d4b0", "after": "#fdfdfb" },
+    { "titulo": "Ortodoncia invisible", "before": "#dcd3bd", "after": "#fbfbf7" },
+    { "titulo": "Rehabilitación con implantes", "before": "#cdbf9c", "after": "#ffffff" }
+  ],
+  "slider": {
+    "titulo": "El cambio está en los detalles",
+    "texto": "Cada sonrisa que rehabilitamos parte de un plan de tratamiento hecho a medida. Desliza para ver el antes y el después de un caso real de nuestra clínica.",
+    "cta": "Ver más casos"
+  },
   "equipo": [
-    {
-      "nombre": "Dr. Álvaro Muñoz",
-      "rol": "Director clínico · Odontólogo",
-      "bio": "Especialista en implantología con más de una década de experiencia en Burgos.",
-      "iniciales": "AM"
-    },
-    {
-      "nombre": "Dra. Cristina Nieto",
-      "rol": "Ortodoncista",
-      "bio": "Dedicada a la ortodoncia infantil y adulta, con un trato especialmente cercano con los más pequeños.",
-      "iniciales": "CN"
-    }
+    { "nombre": "Dr. Álvaro Muñoz", "rol": "Director clínico · Odontólogo", "bio": "Especialista en implantología con más de una década de experiencia en Burgos. Formado en cirugía guiada por ordenador.", "iniciales": "AM" },
+    { "nombre": "Dra. Cristina Nieto", "rol": "Ortodoncista", "bio": "Dedicada a la ortodoncia infantil y adulta, con un trato especialmente cercano con los más pequeños.", "iniciales": "CN" },
+    { "nombre": "Dra. Lucía Ferrer", "rol": "Odontología estética y conservadora", "bio": "Experta en carillas y diseño de sonrisa digital, buscando siempre el resultado más natural posible.", "iniciales": "LF" }
+  ],
+  "faq": [
+    { "q": "¿Cuánto cuesta un implante dental?", "a": "El precio depende del tipo de implante y de si es necesario regenerar hueso previamente. En la primera visita valoramos tu caso con un TAC y te entregamos un presupuesto cerrado y por escrito, sin compromiso." },
+    { "q": "¿La primera visita tiene coste?", "a": "No. La primera visita de valoración, incluida la exploración y el plan de tratamiento, es gratuita. Solo empezamos cuando tienes toda la información y estás de acuerdo con el presupuesto." },
+    { "q": "¿Ofrecéis financiación?", "a": "Sí. Trabajamos con financiación de hasta 24 meses sin intereses para que puedas repartir el importe del tratamiento con comodidad. Te explicamos las condiciones antes de empezar." },
+    { "q": "¿Duele la ortodoncia invisible?", "a": "Las férulas transparentes son mucho más cómodas que la ortodoncia tradicional. Puedes notar una ligera presión los primeros días de cada férula, pero no dolor. Además son removibles para comer y lavarte los dientes." },
+    { "q": "¿Atendéis urgencias?", "a": "Sí. Reservamos huecos diarios para urgencias como dolor agudo, un diente roto o un flemón. Llámanos o escríbenos por WhatsApp y te damos cita lo antes posible." },
+    { "q": "¿Cada cuánto debería revisarme?", "a": "Recomendamos una revisión y limpieza cada 6-12 meses. En esas visitas detectamos a tiempo caries, problemas de encías o desgastes, evitando tratamientos más costosos en el futuro." }
   ],
   "direccion": "Calle Vitoria 12, 09004 Burgos",
   "horarios": "Lunes a viernes: 9:30 - 20:30 · Sábados: 10:00 - 13:30",
