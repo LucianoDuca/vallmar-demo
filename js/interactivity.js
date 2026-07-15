@@ -86,13 +86,19 @@ function initBeforeAfterSlider() {
   });
 }
 
+// Devuelve una fuente de imagen: ruta/URL directa, o SVG generado si es un color
+function caseImg(value, bright) {
+  if (typeof value === 'string' && /^(\.|\/|https?:|data:)/.test(value)) return value;
+  return svgDataUri(smileSVG(value || (bright ? '#ffffff' : '#d9c9a3'), { bright: bright }));
+}
+
 function renderBeforeAfterSlider(config) {
   const section = document.querySelector('.before-after-slider');
   if (!section) return;
   const s = config.slider || {};
   const caso = (config.casos && config.casos[0]) || { before: '#d9c9a3', after: '#ffffff' };
-  const beforeImg = svgDataUri(smileSVG(caso.before, { bright: false }));
-  const afterImg = svgDataUri(smileSVG(caso.after, { bright: true }));
+  const beforeImg = caseImg(caso.before, false);
+  const afterImg = caseImg(caso.after, true);
 
   section.innerHTML = `
     <div class="slider-content">
@@ -130,7 +136,7 @@ function initGallery() {
 function renderGallery(config) {
   const section = document.querySelector('.gallery');
   if (!section) return;
-  const casos = config.casos || [];
+  const casos = (config.casos || []).slice(0, 4);
   section.innerHTML = `
     <div class="gallery-content">
       <div class="gallery-header">
@@ -140,8 +146,8 @@ function renderGallery(config) {
       <div class="gallery-grid">
         ${casos.map(c => `
           <div class="gallery-item" title="${c.titulo}">
-            <img src="${svgDataUri(smileSVG(c.before, { bright: false }))}" alt="${c.titulo} — antes" class="gallery-item-image gallery-item-before">
-            <img src="${svgDataUri(smileSVG(c.after, { bright: true }))}" alt="${c.titulo} — después" class="gallery-item-image gallery-item-after">
+            <img src="${caseImg(c.before, false)}" alt="${c.titulo} — antes" class="gallery-item-image gallery-item-before">
+            <img src="${caseImg(c.after, true)}" alt="${c.titulo} — después" class="gallery-item-image gallery-item-after">
             <div class="gallery-divider"></div>
             <span class="gallery-toggle">${c.titulo}</span>
           </div>`).join('')}

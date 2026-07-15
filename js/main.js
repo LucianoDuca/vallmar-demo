@@ -198,7 +198,7 @@ function renderHero() {
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-art">${heroArtSVG()}</div>
+        <div class="hero-art">${config.heroImagen ? `<img src="${config.heroImagen}" alt="Sonrisa tratada en ${config.nombre}" style="width:100%;height:100%;object-fit:cover;display:block;">` : heroArtSVG()}</div>
         <div class="hero-float-badge">${icon('shield', 'icon')} Garantía por escrito</div>
         <div class="hero-stat-card">
           <span class="big">+12.000</span>

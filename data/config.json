@@ -5,6 +5,7 @@
   "eslogan": "Sonrisas cuidadas con calma",
   "heroTitulo": "Tu sonrisa, tratada con <em>calma</em> y criterio en el centro de Burgos",
   "heroSubtitulo": "Odontología cercana y sin prisas: primera visita de valoración incluida y presupuesto claro por escrito antes de empezar.",
+  "heroImagen": "./assets/img/tratamientos/estetica-dental.png",
   "telefono": "+34 947 000 000",
   "whatsapp": "34600000001",
   "whatsappMensaje": "Hola, quería pedir una cita en Clínica Dental Vallmar",
@@ -41,10 +42,11 @@
     { "autor": "Fernando A.", "estrellas": 4, "texto": "Buen trato y precios claros desde el primer presupuesto. Sin sorpresas al final." }
   ],
   "casos": [
-    { "titulo": "Carillas de porcelana", "before": "#d9c9a3", "after": "#ffffff" },
-    { "titulo": "Blanqueamiento", "before": "#e2d4b0", "after": "#fdfdfb" },
-    { "titulo": "Ortodoncia invisible", "before": "#dcd3bd", "after": "#fbfbf7" },
-    { "titulo": "Rehabilitación con implantes", "before": "#cdbf9c", "after": "#ffffff" }
+    { "titulo": "Carillas de porcelana", "before": "./assets/img/casos/caso-01-antes.png", "after": "./assets/img/casos/caso-01-despues.png" },
+    { "titulo": "Rehabilitación con implantes", "before": "./assets/img/casos/caso-02-antes.png", "after": "./assets/img/casos/caso-02-despues.png" },
+    { "titulo": "Ortodoncia invisible", "before": "./assets/img/casos/caso-03-antes.png", "after": "./assets/img/casos/caso-03-despues.png" },
+    { "titulo": "Blanqueamiento dental", "before": "./assets/img/casos/caso-04-antes.png", "after": "./assets/img/casos/caso-04-despues.png" },
+    { "titulo": "Diseño de sonrisa", "before": "./assets/img/casos/caso-05-antes.jpg", "after": "./assets/img/casos/caso-05-despues.jpg" }
   ],
   "slider": {
     "titulo": "El cambio está en los detalles",

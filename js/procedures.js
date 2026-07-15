@@ -97,6 +97,16 @@ const procedures = {
   }
 };
 
+// Fotos de simulación (IA) por tratamiento. Fallback a arte SVG si falta la imagen.
+const PROC_IMG = {
+  implantes: "./assets/img/tratamientos/implantes.png",
+  ortodoncia: "./assets/img/tratamientos/ortodoncia-invisible.png",
+  estetica: "./assets/img/tratamientos/estetica-dental.png",
+  endodoncia: "./assets/img/tratamientos/tratamiento-conducto.png",
+  periodoncia: "./assets/img/tratamientos/tratamiento-encias.png",
+  general: "./assets/img/tratamientos/limpiezas-empastes.png"
+};
+
 function procArtSVG(key) {
   const inner = (typeof ICONS !== 'undefined' && ICONS[key]) ? ICONS[key] : (ICONS.general || '');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
@@ -108,6 +118,12 @@ function procArtSVG(key) {
       <g transform="translate(-12 -12)">${inner}</g>
     </g>
   </svg>`;
+}
+
+function procArt(key, titulo) {
+  const img = PROC_IMG[key];
+  if (img) return `<img src="${img}" alt="Simulación de ${titulo}" style="width:100%;height:100%;object-fit:cover;display:block;">`;
+  return procArtSVG(key);
 }
 
 function renderProcedurePage(key, cfg) {
@@ -134,7 +150,7 @@ function renderProcedurePage(key, cfg) {
 
       <section class="proc-section">
         <div class="proc-grid">
-          <div class="proc-art">${procArtSVG(p.icono || key)}</div>
+          <div class="proc-art">${procArt(key, p.titulo)}</div>
           <div>
             <p class="proc-lead">${p.descripcion}</p>
             <ul class="proc-benefits">
