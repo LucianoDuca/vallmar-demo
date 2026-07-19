@@ -10,7 +10,7 @@
   "whatsapp": "34600000001",
   "whatsappMensaje": "Hola, quería pedir una cita en Clínica Dental Vallmar",
   "colores": {
-    "primario": "#0F5257",
+    "primario": "#A34A52",
     "acento": "#C79A3F"
   },
   "stats": [
@@ -45,8 +45,7 @@
     { "titulo": "Carillas de porcelana", "before": "./assets/img/casos/caso-01-antes.png", "after": "./assets/img/casos/caso-01-despues.png" },
     { "titulo": "Rehabilitación con implantes", "before": "./assets/img/casos/caso-02-antes.png", "after": "./assets/img/casos/caso-02-despues.png" },
     { "titulo": "Ortodoncia invisible", "before": "./assets/img/casos/caso-03-antes.png", "after": "./assets/img/casos/caso-03-despues.png" },
-    { "titulo": "Blanqueamiento dental", "before": "./assets/img/casos/caso-04-antes.png", "after": "./assets/img/casos/caso-04-despues.png" },
-    { "titulo": "Diseño de sonrisa", "before": "./assets/img/casos/caso-05-antes.jpg", "after": "./assets/img/casos/caso-05-despues.jpg" }
+    { "titulo": "Blanqueamiento dental", "before": "./assets/img/casos/caso-04-antes.png", "after": "./assets/img/casos/caso-04-despues.png" }
   ],
   "slider": {
     "titulo": "El cambio está en los detalles",

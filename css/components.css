@@ -61,6 +61,15 @@
 
 .btn-sm { padding: 0.6rem 1.1rem; font-size: 0.86rem; }
 
+/* ===== Focus visible (accesibilidad por teclado) ===== */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+/* Sin outline para punteros (mouse/touch); solo teclado lo ve */
+:focus:not(:focus-visible) { outline: none; }
+
 /* ===== Cards ===== */
 .card {
   background-color: var(--surface);

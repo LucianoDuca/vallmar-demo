@@ -110,11 +110,11 @@ const PROC_IMG = {
 function procArtSVG(key) {
   const inner = (typeof ICONS !== 'undefined' && ICONS[key]) ? ICONS[key] : (ICONS.general || '');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-    <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF3F1"/><stop offset="1" stop-color="#D8E9E5"/></linearGradient></defs>
+    <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7ECE6"/><stop offset="1" stop-color="#F0DFD8"/></linearGradient></defs>
     <rect width="600" height="400" fill="url(#pg)"/>
-    <circle cx="120" cy="90" r="120" fill="#0F5257" opacity="0.06"/>
+    <circle cx="120" cy="90" r="120" fill="#A34A52" opacity="0.06"/>
     <circle cx="500" cy="330" r="140" fill="#C79A3F" opacity="0.09"/>
-    <g transform="translate(300 200) scale(7)" fill="none" stroke="#0F5257" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <g transform="translate(300 200) scale(7)" fill="none" stroke="#A34A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
       <g transform="translate(-12 -12)">${inner}</g>
     </g>
   </svg>`;

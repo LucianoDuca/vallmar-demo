@@ -31,25 +31,25 @@
 /* ===== Dark mode — coherente con la marca (teal profundo + oro) ===== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0C2224;
-    --bg-light: #10312F;
-    --surface: #123032;
-    --text: #EAF3F1;
-    --text-light: #A8BEB9;
-    --text-lighter: #7E938E;
+    --bg: #211416;
+    --bg-light: #2A1B1D;
+    --surface: #2C1D1F;
+    --text: #F5E9E6;
+    --text-light: #C7B0AC;
+    --text-lighter: #9A8481;
     --border-light: rgba(255, 255, 255, 0.10);
     --border-strong: rgba(255, 255, 255, 0.18);
-    --primary-050: rgba(87, 227, 155, 0.10);
-    --glass: rgba(12, 34, 36, 0.78);
+    --primary-050: rgba(214, 120, 110, 0.12);
+    --glass: rgba(33, 20, 22, 0.80);
     --glass-border: rgba(255, 255, 255, 0.08);
   }
 
   .btn-secondary { color: var(--text); }
   .btn-secondary:hover { background: var(--surface); color: var(--accent); border-color: var(--accent); }
-  .service-icon, .location-detail-icon { background: rgba(87, 227, 155, 0.12); color: #7fe3b6; }
+  .service-icon, .location-detail-icon { background: rgba(214, 120, 110, 0.14); color: #e8a494; }
   .eyebrow { background: rgba(199, 154, 63, 0.14); }
-  .star-empty { color: #3c4f4c; }
+  .star-empty { color: #5b4442; }
   .review-source, .section-header-label { color: var(--accent); }
-  .faq-toggle { background: rgba(87, 227, 155, 0.12); color: #7fe3b6; }
+  .faq-toggle { background: rgba(214, 120, 110, 0.14); color: #e8a494; }
   .trust-strip { background: var(--surface); }
 }

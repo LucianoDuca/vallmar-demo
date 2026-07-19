@@ -26,13 +26,18 @@ function initNavbar() {
 
   // Cualquier elemento con data-procedure abre la ficha de tratamiento
   document.querySelectorAll('[data-procedure]').forEach(item => {
-    item.addEventListener('click', (e) => {
+    const openProcedure = (e) => {
       const key = item.getAttribute('data-procedure');
       if (key && typeof renderProcedurePage === 'function') {
         e.preventDefault();
         if (navDesktop) navDesktop.classList.remove('active');
         renderProcedurePage(key, config);
       }
+    };
+    item.addEventListener('click', openProcedure);
+    // Accesibilidad: activar con Enter o Espacio cuando el foco está en la tarjeta
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') openProcedure(e);
     });
   });
 

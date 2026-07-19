@@ -16,6 +16,7 @@ const ICONS = {
   clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   card: '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/>',
   leaf: '<path d="M4 20c0-8 6-14 16-14 0 10-6 14-16 14z"/><path d="M4 20c3-4 6-6 10-8"/>',
+  tooth: '<path d="M12 3.2c-1.7 0-2.6 1-4 1-1.7 0-3.2 1-3.2 3.4 0 2.4 1.1 3.6 1.7 6.2.5 2.3.7 6 2.4 6 1.4 0 1.3-2.7 1.7-4.4.2-.9.6-1.4 1.4-1.4s1.2.5 1.4 1.4c.4 1.7.3 4.4 1.7 4.4 1.7 0 1.9-3.7 2.4-6 .6-2.6 1.7-3.8 1.7-6.2C21.2 8.2 19.7 7.2 18 7.2c-1.4 0-2.3-1-4-1z"/>',
   check: '<path d="M20 6L9 17l-5-5"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   pin: '<path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
@@ -38,7 +39,7 @@ function svgDataUri(svg) {
 function smileSVG(toothColor, opts) {
   opts = opts || {};
   const bright = !!opts.bright;
-  const bg = opts.bg || '#EAF1F0';
+  const bg = opts.bg || '#F7ECE6';
   const n = 10;
   let teeth = '';
   for (let i = 0; i < n; i++) {
@@ -69,24 +70,24 @@ function heroArtSVG() {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 560" preserveAspectRatio="xMidYMid slice">
     <defs>
       <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#F5FAF8"/><stop offset="1" stop-color="#E2EFEC"/>
+        <stop offset="0" stop-color="#FBF3EE"/><stop offset="1" stop-color="#F2E3DC"/>
       </linearGradient>
       <linearGradient id="ht" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#EAF3F1"/>
+        <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F7ECE6"/>
       </linearGradient>
     </defs>
     <rect width="520" height="560" fill="url(#hg)"/>
-    <circle cx="90" cy="110" r="150" fill="#0F5257" opacity="0.06"/>
+    <circle cx="90" cy="110" r="150" fill="#A34A52" opacity="0.06"/>
     <circle cx="450" cy="470" r="180" fill="#C79A3F" opacity="0.08"/>
     <g transform="translate(260 280)">
-      <path d="M0 -150 C-70 -150 -110 -104 -110 -46 C-110 12 -78 42 -66 108 C-58 150 -44 196 -14 196 C6 196 8 150 14 120 C18 100 24 96 30 116 C38 150 44 196 66 190 C96 182 100 132 108 74 C118 8 110 -30 88 -78 C70 -116 44 -150 0 -150 Z" fill="url(#ht)" stroke="#0F5257" stroke-width="3" stroke-opacity="0.18"/>
-      <path d="M-64 -78 C-40 -104 6 -104 24 -74" fill="none" stroke="#0F5257" stroke-width="5" stroke-linecap="round" stroke-opacity="0.28"/>
+      <path d="M0 -150 C-70 -150 -110 -104 -110 -46 C-110 12 -78 42 -66 108 C-58 150 -44 196 -14 196 C6 196 8 150 14 120 C18 100 24 96 30 116 C38 150 44 196 66 190 C96 182 100 132 108 74 C118 8 110 -30 88 -78 C70 -116 44 -150 0 -150 Z" fill="url(#ht)" stroke="#A34A52" stroke-width="3" stroke-opacity="0.18"/>
+      <path d="M-64 -78 C-40 -104 6 -104 24 -74" fill="none" stroke="#A34A52" stroke-width="5" stroke-linecap="round" stroke-opacity="0.28"/>
     </g>
     <g transform="translate(372 190)">
       <path d="M0 -26 L7 -7 L26 0 L7 7 L0 26 L-7 7 L-26 0 L-7 -7 Z" fill="#C79A3F"/>
     </g>
     <g transform="translate(150 400) scale(0.6)" opacity="0.85">
-      <path d="M0 -26 L7 -7 L26 0 L7 7 L0 26 L-7 7 L-26 0 L-7 -7 Z" fill="#0F5257"/>
+      <path d="M0 -26 L7 -7 L26 0 L7 7 L0 26 L-7 7 L-26 0 L-7 -7 Z" fill="#A34A52"/>
     </g>
   </svg>`;
 }
@@ -160,7 +161,7 @@ function renderPage() {
 function renderDemoBanner() {
   const banner = document.querySelector('.demo-banner');
   if (banner && config.demo) {
-    banner.innerHTML = `Demo — propuesta de diseño para <strong>${config.nombre}</strong>. Todos los datos y contactos son ficticios.`;
+    banner.innerHTML = `<span class="demo-tag">Demo</span> Propuesta de diseño para <strong>${config.nombre}</strong> · datos y contactos ficticios.`;
   }
 }
 
@@ -168,7 +169,7 @@ function renderHeader() {
   const brand = document.querySelector('.logo');
   if (brand) {
     brand.innerHTML = `
-      <span class="logo-mark">${icon('leaf')}</span>
+      <span class="logo-mark">${icon('tooth')}</span>
       <span class="logo-text">${config.marca || config.nombre}<small>Clínica dental · ${config.ciudad}</small></span>`;
   }
   const cta = document.querySelector('.header-cta');
@@ -236,7 +237,7 @@ function renderServices() {
       </div>
       <div class="grid grid-3">
         ${config.servicios.map(s => `
-          <article class="service-card" ${s.slug ? `data-procedure="${s.slug}"` : ''}>
+          <article class="service-card" ${s.slug ? `data-procedure="${s.slug}" role="button" tabindex="0" aria-label="Ver tratamiento: ${s.nombre}"` : ''}>
             <div class="service-icon">${icon(s.icono || 'general')}</div>
             <h3 class="service-title">${s.nombre}</h3>
             <p class="service-description">${s.descripcion}</p>
@@ -363,7 +364,11 @@ function renderFooter() {
     </div>
     <div class="footer-bottom">
       <span>© <span data-year></span> ${config.nombre}. Todos los derechos reservados.</span>
-      <span>Aviso legal · Privacidad · Cookies</span>
+      <span class="footer-legal">
+        <a href="aviso-legal.html">Aviso legal</a> ·
+        <a href="privacidad.html">Privacidad</a> ·
+        <a href="cookies.html">Cookies</a>
+      </span>
     </div>`;
 }
 
