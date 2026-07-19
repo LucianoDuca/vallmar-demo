@@ -169,7 +169,7 @@ function renderHeader() {
   const brand = document.querySelector('.logo');
   if (brand) {
     brand.innerHTML = `
-      <span class="logo-mark">${icon('tooth')}</span>
+      <span class="logo-mark"><img src="./assets/img/logo-mark.png" alt="" width="29" height="29" loading="eager" decoding="async"></span>
       <span class="logo-text">${config.marca || config.nombre}<small>Clínica dental · ${config.ciudad}</small></span>`;
   }
   const cta = document.querySelector('.header-cta');

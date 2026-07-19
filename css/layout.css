@@ -88,12 +88,13 @@ header.scrolled {
   display: grid;
   place-items: center;
   border-radius: 0.7rem;
-  background: linear-gradient(150deg, var(--primary) 0%, var(--primary-700) 100%);
-  color: #fff;
-  box-shadow: var(--shadow-brand);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .logo-mark svg { width: 1.35rem; height: 1.35rem; }
+.logo-mark img { width: 1.8rem; height: 1.8rem; object-fit: contain; display: block; }
 
 .logo-text small {
   display: block;
